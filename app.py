@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from joblib import load
+import json
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ loaded_features = load('output/features.pkl')
 loaded_features = list(loaded_features)
 
 @app.route('/predict', methods=['POST'])
-def predict(device_json : dict) -> int : 
+def predict() -> int : 
   """
   Takes in the json/dict of the device and return predcition
   
@@ -19,6 +20,8 @@ def predict(device_json : dict) -> int :
   Return:
   int : prediction of device price range
   """
+  device_json :dict =  request.get_json()
+
   # drop id
   _ = device_json.pop('id')
 
@@ -32,4 +35,7 @@ def predict(device_json : dict) -> int :
   # prediction phase
   prediction = loaded_m.predict([list(device_json.values())])
 
-  return int(prediction)
+  return jsonify({'Price Range': int(prediction[0])})
+
+if __name__ == '__main__':
+  app.run(host='127.0.0.1', port=5000, debug=True)

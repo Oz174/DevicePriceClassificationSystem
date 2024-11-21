@@ -18,15 +18,17 @@ public class DeviceController {
     @Autowired
     private PricePredictionService pricePredictionService;
 
-    private long idCounter = 100l;
+    private long idCounter = 100L;
 
     // The dataset, with a few records
     private Map<String, Device> db = new HashMap<>(){{
-        put("1", new Device(1l, 842, 0, 2.2f, 0, 1, 0, 7, 0.6f, 188, 2, 2, 20, 756, 2549, 9, 7, 19, 0, 0, 1, 1));
-        put("2", new Device(2l, 1021, 1, 0.5f, 1, 0, 1, 53, 0.7f, 136, 3, 6, 905, 1988, 2631, 17, 3, 7, 1, 1, 0, 2));
-        put("3", new Device(3l, 1043, 1, 1.8f, 1, 14, 0, 5, 0.1f, 193, 3, 16, 226, 1412, 3476, 12, 7, 2, 0, 1, 0, 0));
+        put("1", new Device(1L, 842, 0, 2.2f, 0, 1, 0, 7, 0.6f, 188, 2, 2, 20, 756, 2549, 9, 7, 19, 0, 0, 1));
+        put("2", new Device(2L, 1021, 1, 0.5f, 1, 0, 1, 53, 0.7f, 136, 3, 6, 905, 1988, 2631, 17, 3, 7, 1, 1, 0));
+        put("3", new Device(3L, 1043, 1, 1.8f, 1, 14, 0, 5, 0.1f, 193, 3, 16, 226, 1412, 3476, 12, 7, 2, 0, 1, 0));
 
     }};
+    // another hashmap for the predictions storage (as if it's another table)
+    private Map<String, Integer> predictions = new HashMap<>(); // key is the device id, value is the price range
 
     @GetMapping("/devices/")
     public Collection<Device> getDevices() {
@@ -44,7 +46,7 @@ public class DeviceController {
         return device;
     }
 
-    @PostMapping("/devices")
+    @PostMapping("/devices/")
     public Device addDevice(@RequestBody Device device) {
         // adds a device to the database
         device.setId(idCounter++);      // creates unique ID
@@ -61,7 +63,8 @@ public class DeviceController {
         if (device == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         int price = pricePredictionService.predictPrice(device);
-        device.setPriceRange(price);
+        predictions.put(deviceId, price);       // stores the prediction
+        
         return price;
     }
 

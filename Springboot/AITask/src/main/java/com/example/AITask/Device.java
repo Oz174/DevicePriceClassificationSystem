@@ -6,51 +6,49 @@ public class Device {
     private Long id;
     private int battery_power;
     private int blue;
-    private float clockSpeed;
-    private int dualSim;
+    private float clock_speed;
+    private int dual_sim;
     private int fc;
-    private int fourG;
-    private int intMemory;
-    private float mDep;
-    private int mobileWt;
-    private int nCores;
+    private int four_g;
+    private int int_memory;
+    private float m_dep;
+    private int mobile_wt;
+    private int n_cores;
     private int pc;
     private int px_height;
     private int px_width;
     private int ram;
-    private int scH;
-    private int scW;
-    private int talkTime;
-    private int threeG;
-    private int touchScreen;
+    private int sc_h;
+    private int sc_w;
+    private int talk_time;
+    private int three_g;
+    private int touch_screen;
     private int wifi;
-    private int priceRange;
 
     public Device() {
     }
-    public Device(Long id, int battery_power, int blue, float clockSpeed, int dualSim, int fc, int fourG, int intMemory, float mDep, int mobileWt, int nCores, int pc, int px_height, int px_width, int ram, int scH, int scW, int talkTime, int threeG, int touchScreen, int wifi, int priceRange) {
+    public Device(Long id, int battery_power, int blue, float clock_speed, int dual_sim, int fc, int four_g, int int_memory, float m_dep, int mobile_wt, int n_cores, int pc, int px_height, int px_width, int ram, int sc_h, int sc_w, int talk_time, int three_g, int touch_screen, int wifi) {
         this.id = id;
         this.battery_power = battery_power;
         this.blue = blue;
-        this.clockSpeed = clockSpeed;
-        this.dualSim = dualSim;
+        this.clock_speed = clock_speed;
+        this.dual_sim = dual_sim;
         this.fc = fc;
-        this.fourG = fourG;
-        this.intMemory = intMemory;
-        this.mDep = mDep;
-        this.mobileWt = mobileWt;
-        this.nCores = nCores;
+        this.four_g = four_g;
+        this.int_memory = int_memory;
+        this.m_dep = m_dep;
+        this.mobile_wt = mobile_wt;
+        this.n_cores = n_cores;
         this.pc = pc;
         this.px_height = px_height;
         this.px_width = px_width;
         this.ram = ram;
-        this.scH = scH;
-        this.scW = scW;
-        this.talkTime = talkTime;
-        this.threeG = threeG;
-        this.touchScreen = touchScreen;
+        this.sc_h = sc_h;
+        this.sc_w = sc_w;
+        this.talk_time = talk_time;
+        this.three_g = three_g;
+        this.touch_screen = touch_screen;
         this.wifi = wifi;
-        this.priceRange = priceRange;
     }
 
     // Getters and setters
@@ -78,20 +76,20 @@ public class Device {
         this.blue = blue;
     }
 
-    public float getClockSpeed() {
-        return clockSpeed;
+    public float getclock_speed() {
+        return clock_speed;
     }
 
-    public void setClockSpeed(float clockSpeed) {
-        this.clockSpeed = clockSpeed;
+    public void setclock_speed(float clock_speed) {
+        this.clock_speed = clock_speed;
     }
 
-    public int getDualSim() {
-        return dualSim;
+    public int getdual_sim() {
+        return dual_sim;
     }
 
-    public void setDualSim(int dualSim) {
-        this.dualSim = dualSim;
+    public void setdual_sim(int dual_sim) {
+        this.dual_sim = dual_sim;
     }
 
     public int getFc() {
@@ -102,44 +100,44 @@ public class Device {
         this.fc = fc;
     }
 
-    public int getFourG() {
-        return fourG;
+    public int getfour_g() {
+        return four_g;
     }
 
-    public void setFourG(int fourG) {
-        this.fourG = fourG;
+    public void setfour_g(int four_g) {
+        this.four_g = four_g;
     }
 
-    public int getIntMemory() {
-        return intMemory;
+    public int getint_memory() {
+        return int_memory;
     }
 
-    public void setIntMemory(int intMemory) {
-        this.intMemory = intMemory;
+    public void setint_memory(int int_memory) {
+        this.int_memory = int_memory;
     }
 
-    public float getmDep() {
-        return mDep;
+    public float getm_dep() {
+        return m_dep;
     }
 
-    public void setmDep(float mDep) {
-        this.mDep = mDep;
+    public void setm_dep(float m_dep) {
+        this.m_dep = m_dep;
     }
 
-    public int getMobileWt() {
-        return mobileWt;
+    public int getmobile_wt() {
+        return mobile_wt;
     }
 
-    public void setMobileWt(int mobileWt) {
-        this.mobileWt = mobileWt;
+    public void setmobile_wt(int mobile_wt) {
+        this.mobile_wt = mobile_wt;
     }
 
-    public int getnCores() {
-        return nCores;
+    public int getn_cores() {
+        return n_cores;
     }
 
-    public void setnCores(int nCores) {
-        this.nCores = nCores;
+    public void setn_cores(int n_cores) {
+        this.n_cores = n_cores;
     }
 
     public int getPc() {
@@ -174,44 +172,44 @@ public class Device {
         this.ram = ram;
     }
 
-    public int getScH() {
-        return scH;
+    public int getsc_h() {
+        return sc_h;
     }
 
-    public void setScH(int scH) {
-        this.scH = scH;
+    public void setsc_h(int sc_h) {
+        this.sc_h = sc_h;
     }
 
-    public int getScW() {
-        return scW;
+    public int getsc_w() {
+        return sc_w;
     }
 
-    public void setScW(int scW) {
-        this.scW = scW;
+    public void setsc_w(int sc_w) {
+        this.sc_w = sc_w;
     }
 
-    public int getTalkTime() {
-        return talkTime;
+    public int gettalk_time() {
+        return talk_time;
     }
 
-    public void setTalkTime(int talkTime) {
-        this.talkTime = talkTime;
+    public void settalk_time(int talk_time) {
+        this.talk_time = talk_time;
     }
 
-    public int getThreeG() {
-        return threeG;
+    public int getthree_g() {
+        return three_g;
     }
 
-    public void setThreeG(int threeG) {
-        this.threeG = threeG;
+    public void setthree_g(int three_g) {
+        this.three_g = three_g;
     }
 
-    public int getTouchScreen() {
-        return touchScreen;
+    public int gettouch_screen() {
+        return touch_screen;
     }
 
-    public void setTouchScreen(int touchScreen) {
-        this.touchScreen = touchScreen;
+    public void settouch_screen(int touch_screen) {
+        this.touch_screen = touch_screen;
     }
 
     public int getWifi() {
@@ -220,13 +218,5 @@ public class Device {
 
     public void setWifi(int wifi) {
         this.wifi = wifi;
-    }
-
-    public int getPriceRange() {
-        return priceRange;
-    }
-
-    public void setPriceRange(int priceRange) {
-        this.priceRange = priceRange;
     }
 }

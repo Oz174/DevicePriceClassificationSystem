@@ -1,5 +1,8 @@
 from flask import Flask, request, jsonify
 from joblib import load
+import warnings
+
+warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
 
@@ -21,6 +24,7 @@ def predict() -> int :
   """
   device_json :dict =  request.get_json()
 
+
   # drop id
   _ = device_json.pop('id')
 
@@ -34,7 +38,7 @@ def predict() -> int :
   # prediction phase
   prediction = loaded_m.predict([list(device_json.values())])
 
-  return jsonify({'Price Range': int(prediction[0])})
+  return jsonify(int(prediction[0]))
 
 if __name__ == '__main__':
   app.run(host='127.0.0.1', port=5000, debug=True)
